@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+            color: white;
+            background-color: rgb(29, 29, 29);
+            font-size: 20px;
+        }
+
+        .panels {
+            min-height: 75vh;
+            display: flex;
+            gap: 10px;
+        }
+
+        .panel {
+            background-color: gray;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px white;
+            transition: flex 0.5s ease-in;
+            text-transform: uppercase;
+        }
+
+        .panel.open {
+            flex: 5;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .poz {
+            display:flex;
+        }
+
+        p {
+            position:fixed;
+        }
+
+        @media screen and (max-width: 600px) {
+            .Future {
+                display: none;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <header class="panels" onclick="toggleOpen(event)"></header>
+
+    <script>
+
+        const adatok = [
+            {word: "Oldtimer", photo: "old.png"},
+            {word: "Modern", photo: "new.jpg"},
+            {word: "Future", photo: "taycan.jpg"},
+            {word: "Racing", photo: "963.jpg"}
+        ];
+        adatok.forEach((obj)=>document.querySelector(".panels").innerHTML+=`
+        <div class="panel ${obj.word}">${obj.word}</div>
+        `)
+
+        const panelList=document.querySelectorAll(".panel")//interáló, 
+        panelList.forEach((panel, index)=>panel.style.backgroundImage=`url(${adatok[index].photo})`)
+
+        const toggleOpen=(e)=>{
+            console.log(e.target);
+            if (e.target.classList.contains('open')) 
+                e.target.classList.remove('open')
+            else {
+                panelList.forEach(panel=>panel.classList.remove('open'))
+                e.target.classList.add('open')
+            }
+
+        }
+
+
+    </script>
+
+    <div class="poz">
+        <p>There Is No Substitute</p>
+    </div>
+
+</body>
+
+</html>
