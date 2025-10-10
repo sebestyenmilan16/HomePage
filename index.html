@@ -15,13 +15,13 @@
         }
 
         .panels {
-            min-height: 50vh;
+
+            min-height: 85vh;
             display: flex;
             gap: 10px;
         }
 
         .panel {
-            background-color: gray;
             flex: 1;
             display: flex;
             justify-content: center;
@@ -32,6 +32,7 @@
             box-shadow: 1px 1px 5px white;
             transition: flex 0.5s ease-in;
             text-transform: uppercase;
+            
         }
 
         .panel.open {
@@ -44,14 +45,28 @@
             display:flex;
         }
 
-        p {
-            position:fixed;
+        h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            letter-spacing: 10px;
+            font-weight: 900;
+            font-size: 35px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+        }
+
+        .panel::after {
+            content: "";
+            inset: 0;
+            background: rgba(0, 0, 0, 0.2);
         }
 
         @media screen and (max-width: 600px) {
-            .panels {
-                flex-direction: column;
-                min-height: 90vh;
+            .Future {
+                display: none;
             }
         }
 
@@ -61,6 +76,8 @@
 
 <body>
     
+    <h1>"There Is No Substitute"</h1>
+
     <header class="panels" onclick="toggleOpen(event)"></header>
 
     <script>
@@ -92,9 +109,8 @@
 
     </script>
 
-    <div class="poz">
-        <p>There Is No Substitute</p>
-    </div>
+    
+    
 
 </body>
 
