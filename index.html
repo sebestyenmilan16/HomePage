@@ -32,7 +32,6 @@
             box-shadow: 1px 1px 5px white;
             transition: flex 0.5s ease-in;
             text-transform: uppercase;
-            
         }
 
         .panel.open {
@@ -47,7 +46,7 @@
 
         h1 {
             position: absolute;
-            top: 50%;
+            top: 52%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 3;
@@ -61,14 +60,30 @@
 
         .panel::after {
             content: "";
+            position: relative;
             inset: 0;
             background: rgba(0, 0, 0, 0.2);
+        }
+
+        #fejlec {
+            display: flex;
+            min-height: 4vh;
+            flex-direction: row;
+        }
+
+        #fejlec a {
+            margin: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-decoration: none;
         }
 
         @media screen and (max-width: 600px) {
             .Future {
                 display: none;
             }
+
         }
 
     </style>
@@ -79,7 +94,14 @@
     
     <h1>"There Is No Substitute"</h1>
 
+    <div id="fejlec">
+            <a target="_blank" href="https://www.hasznaltauto.hu/talalatilista/PCOHKVGBV3RDADH4S57ACFG6MME4OXJBEGW5BHXWLKM5NFGQERDISWZ5ID6PWOTN4G2RK65KGWJ5RY4JLVIIXNN2A42U6VKSAFRUSXWDD2NWII6YLQS6DBQWZUKWVJQWLKVAJTHY4C7MOT62C7EBQGRIEDOJFTKBZX5CJDOAAZ6GNNMLJFTCUSNGBR6A3GIPSVQO3M6RXX6TWIS6PPKZPKQOBRTWP4FWN3Z2QZG6PZLSUKOBQPFTKGA53YOEQY5HMDEL3YNE4YAT3GQTGK62DVZKCF6RINBDOP3CYM5VQW3HAZRYH5YWT5BIDWEFDO4CPJWP5QQGBUH4CZ5T2KG4OUA3BZIYASCPH5NCKP5GN7YDH6DDO4SZKPDZDWMOY3Y57CHSOS5MZHWYVDX6NTO7XO6366O43HU55GYPLXI55XFK2NUM7Y5WDELH7EEXYKKUS2JXHGBTBVUPQPZNJIW7QCRSLXCEUC7ROK3I4UJUSMFDJJTHYS7XTOTK4XEB3VUXHKONCTEGBANXSFPAWFVS64HALKSRW6JF2MPRFY4OGLLMZFM5J3TIQGUNUYEKYZJFYBO2C7HFAVR6AQU4NRAH3KF353TL5HIPVXTF3HGGHDW6ERMMC5O3ZDHRWKF6KFI7CKEBWJ3UEX5NV42U3CMBWL2NWT6MYVDFGLERNPU3VQGQMHFB2KCLQ2GQ32UIVIXF2S6TKOFOXECYNYIYZBQQVYKWZEFFIQ74GNHAOHPV25UGMBCFQMK4OCILDEOAZDBOYUNKNFUJOZ5AEM62JOWD3SWWVYS7URW7FJZNOZWIREJRQLQTUEGTSOURU5ZIRL5236GOZZIQSWW25DFWUNLOG72CVKQ3WYWIR3SEWMDWUDZ5DGJMTPZIX4W2UINYQ7P4ANDM3KJA">Home</a>
+            <a target="_blank" href="https://unsplash.com/s/photos/porsche">Photo</a>
+        </div>
+
     <header class="panels" onclick="toggleOpen(event)"></header>
+
+    
 
     <script>
 
@@ -109,9 +131,6 @@
 
 
     </script>
-
-    
-    
 
 </body>
 
